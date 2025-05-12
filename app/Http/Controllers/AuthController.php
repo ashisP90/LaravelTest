@@ -16,7 +16,6 @@ class AuthController extends Controller
             return response()->json(['message' => 'Invalid credentials'], 401);
         }
 
-        // Check if already logged in (only 1 token allowed)
         if ($user->tokens()->exists()) {
             return response()->json(['message' => 'User already logged in from another device'], 403);
         }
