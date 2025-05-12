@@ -18,4 +18,8 @@ class CartController extends Controller
             ]
         ]);
     }
+
+    public function cartHistory(Request $request){
+        return response()->json(['message' => 'Cart History']);
+    }
 }
