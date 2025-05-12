@@ -15,9 +15,12 @@ class AuthController extends Controller
         if (!$user || !Hash::check($request->password, $user->password)) {
             return response()->json(['message' => 'Invalid credentials'], 401);
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> ashis
         if ($user->tokens()->exists()) {
-            return response()->json(['message' => 'User already logged in from another device'], 403);
+            return response()->json(['message' => 'User already logged in from another device. Please logout from there and login again.'], 403);
         }
 
         $token = $user->createToken('auth_token')->plainTextToken;
